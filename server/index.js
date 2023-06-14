@@ -19,8 +19,7 @@ app.use('/', routes);
 
 
 // Mongoose Variables
-const password = encodeURIComponent('bussywussy');
-const CONNECTION_URL = `mongodb+srv://Aldawan00:${password}@ct-objects.wlnhiwd.mongodb.net/?retryWrites=true&w=majority`;
+const CONNECTION_URL = process.env.CONNECTION_URL;
 const PORT = process.env.PORT || 5000;
 mongoose.set('strictQuery', false);
 
@@ -29,9 +28,3 @@ mongoose.set('strictQuery', false);
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true })
     .then( () =>  app.listen(PORT, () => console.log(`Listening on Port ${PORT}`)))
     .catch( (err) => console.log(err) );
-
-console.log(password)
-
-
-
-
