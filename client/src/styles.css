@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+.supremeContainer {
+    /* border: 5px solid red; */
+    min-width: 100dvh;
+}
+
+body {
+    background-color: #f6f6e9;
+}
