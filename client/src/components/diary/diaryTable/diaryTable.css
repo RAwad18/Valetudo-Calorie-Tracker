@@ -1,0 +1,63 @@
+.diaryTable {
+    border: 0.01rem solid rgb(var(--border-color), 0.25);
+    border-spacing: 0;
+    border-radius: 0.5rem;
+    /* Set to a variable to that it can be referenced */
+    overflow: hidden;
+}
+
+.empty {
+    min-height: 100px;
+}
+
+.emptyContent {
+    padding-left: 0.75em;
+    padding-top: 0.5em;
+    height: 100%;
+    font-size: 0.9rem;
+}
+
+.items {
+    min-height: max-content;
+    border: none;
+    background-color: rgb(var(--third-color), 0.25);
+    font-size: 0.9rem;
+}
+
+.items:nth-child(even) {
+    background-color: rgb(var(--fourth-color), 0.25);
+}
+
+
+/* Table + Table Items */
+.items td {
+    overflow-wrap: break-word;
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+}
+
+.itemName {
+    padding-left: .5rem;
+}
+
+.itemAmt {
+    width: 5%;
+}
+
+.itemUnit {
+    width: 10%;
+    text-align: start;
+}
+
+.itemCal {
+    width: 10%;
+    text-align: end;
+    padding-right: 0.5rem;
+}
+
+.negCal {
+    color: #5dacbd;
+    color: rgb(var(--second-color, 1));
+    font-weight: 600;
+}
+

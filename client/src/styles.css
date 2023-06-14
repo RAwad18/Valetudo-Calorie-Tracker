@@ -2,11 +2,28 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* https://palettes.shecodes.io/palettes/1475 */
+    --first-color: 93, 172, 189;
+    --second-color: 36, 82, 122;
+    --third-color: 167, 188, 185;
+    --fourth-color: 224, 235, 235;
+    --border-color: 39, 35, 67;
+    --font: 'Open Sans';
+    --backup: 'sans-serif';
+    --button-bg-color: 'rgb(var(--fourth-color), 1)';
+}
+
 .supremeContainer {
     /* border: 5px solid red; */
+    min-height: 50%;
     min-width: 100dvh;
+    font-family: var(--font, --backup);
 }
 
 body {
-    background-color: #f6f6e9;
+    margin: 0;
+    padding: 1rem;
+    padding-left: 2rem;
+    background-color: rgba(var(--second-color), 0.5);
 }

@@ -1,92 +1,15 @@
-
 .diaryContainer {
     padding: 1rem;
     padding-bottom: 0.5rem;
+    min-height: 170px;
     min-width: fit-content;
     max-width: 75%;
-    border: 0.01rem solid rgb(39, 35, 67, 0.18);
+    border: 0.01rem solid rgb(var(--border-color), 0.25);
     border-radius: 0.5rem;
-    background-color: rgb(224, 235, 235, 0.5);
+    background-color: rgb(var(--fourth-color), 0.5);
 }
-
-.buttonTray {
-    background-color: darkcyan;
-    margin-bottom: 0.5rem;
-    padding: 0.25rem;
-}
-
-.buttonTray button {
-    margin-right: 2rem;
-}
-
-.diary {
-    border: 0.01rem solid rgb(39, 35, 67, 0.25);
-    border-spacing: 0;
-    border-radius: 0.5rem;
-    /* Set to a variable to that it can be referenced */
-    overflow: hidden;
-}
-
-.diaryItems {
-    min-height: max-content;
-    border: none;
-    background-color: rgb(167, 188, 185, 0.25);
-    /* Text Properties */
-    font-family: 'Open Sans', sans-serif;
-    font-size: 0.9rem;
-}
-
-.diaryItems:nth-child(even) {
-    background-color: rgb(224, 235, 235, 0.25);
-}
-
-.diaryItems td {
-    overflow-wrap: break-word;
-    padding-top: 0.4em;
-    padding-bottom: 0.4em;
-}
-
-.itemName {
-    width: 70%;
-    padding-left: .5rem;
-}
-
-.itemAmt {
-    width: 2.5%;
-}
-
-.itemCal {
-    width: 10%;
-    text-align: end;
-    padding-right: 0.5rem;
-}
-
-.negCal {
-    color: #5dacbd;
-    /* -webkit-text-stroke: 0.15px black;
-    -webkit-text-fill-color: orange; */
-    font-weight: 600;
-}
-
-
-/* End of Base Styles */
-
-
-/* Start of Flexbox Styles */
-
 
 .diaryContainer {
     display: flex;
     flex-direction: column;
-}
-
-.buttonTray {
-    display: flex;
-    justify-content: start;
-    /* padding-left: 0.5rem; */
-}
-
-.diary {
-
-    /* flex-direction: column; */
 }

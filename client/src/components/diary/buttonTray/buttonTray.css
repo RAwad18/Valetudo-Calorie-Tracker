@@ -1,0 +1,27 @@
+.buttonTray {
+    /* background-color: darkcyan; */
+    margin-bottom: 0.5rem;
+    padding: 0.25rem;
+}
+
+.buttonTray {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+    /* padding-left: 0.5rem; */
+}
+
+.buttonTray button {
+    margin-right: 1rem;
+    border: none;
+    background-color: var(--button-bg-color);
+    font-size: 1rem;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25rem;
+}
+
+.buttonTray button:hover{
+    background-color: rgba(var(--second-color), 0.25);
+}
+
+

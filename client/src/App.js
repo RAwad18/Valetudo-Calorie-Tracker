@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import Diary from './components/diary/diary';
-import { Routes, Route } from "react-router-dom";
+
 import { fetchPayload } from './reducers/reducer';
 
 import { dateFormatter } from './functions/date.js'
@@ -29,7 +30,7 @@ const App = () => {
     return (
         <div className='supremeContainer'>
             <h1 onClick={() => { setClicks(3) }}>NUMBER OF CLICKS: {clicks}</h1>
-            {!data.length ? <></> : <Diary className='diaryComponent' data={data} />}
+            <Diary data={data} />
         </div>
     );
 }
