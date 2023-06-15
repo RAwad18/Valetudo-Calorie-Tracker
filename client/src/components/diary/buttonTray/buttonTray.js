@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './buttonTray.css'
+import Day from './day/day'
 
 const ButtonTray = () => {
 
@@ -9,6 +9,7 @@ const ButtonTray = () => {
         <button type='button' id='foodBtn'>Food</button>
         <button type='button' id='exerBtn'>Exercise</button>
         <button type='button' id='weightBtn'>Enter Weight</button>
+        <Day />
       </div>
   )
 }

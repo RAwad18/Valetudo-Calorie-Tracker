@@ -1,7 +1,5 @@
 import React from 'react'
 
-import './diaryTable.css'
-
 const EmptyDiary = () => {
 
   return (

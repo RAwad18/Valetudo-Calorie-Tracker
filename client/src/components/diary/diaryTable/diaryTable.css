@@ -41,12 +41,14 @@
 }
 
 .itemAmt {
-    width: 5%;
+    width: 4%;
+    padding-right: 2rem;
 }
 
 .itemUnit {
-    width: 10%;
+    width: 15%;
     text-align: start;
+    padding-right: 1rem;
 }
 
 .itemCal {

@@ -4,8 +4,6 @@ import { useBeforeUnload } from 'react-router-dom'
 import { calorieOverflow } from './calorieOverflow'
 import { updateItems } from '../../../api/api'
 
-import './diaryTable.css'
-
 
 const DiaryTable = ({ data }) => {
 

@@ -11,6 +11,10 @@
     /* padding-left: 0.5rem; */
 }
 
+.buttonTray>* {
+    flex: auto 0 0;
+}
+
 .buttonTray button {
     margin-right: 1rem;
     border: none;
@@ -20,8 +24,6 @@
     border-radius: 0.25rem;
 }
 
-.buttonTray button:hover{
+.buttonTray button:hover {
     background-color: rgba(var(--second-color), 0.25);
 }
-
-

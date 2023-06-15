@@ -1,12 +1,15 @@
 .diaryContainer {
-    padding: 1rem;
-    padding-bottom: 0.5rem;
+    padding: 0.6rem 1rem;
+    padding-bottom: 0.75rem;
     min-height: 170px;
-    min-width: fit-content;
-    max-width: 75%;
     border: 0.01rem solid rgb(var(--border-color), 0.25);
     border-radius: 0.5rem;
     background-color: rgb(var(--fourth-color), 0.5);
+}
+
+.diaryContainer{
+    min-width: max-content;
+    width: 75%;
 }
 
 .diaryContainer {

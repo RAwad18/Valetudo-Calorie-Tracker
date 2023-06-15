@@ -4,10 +4,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import Diary from './components/diary/diary';
 
 import { fetchPayload } from './reducers/reducer';
-
 import { dateFormatter } from './functions/date.js'
 
+// Style Sheets
 import './styles.css'
+import './components/dashboard/dashboard.css'
+import './components/diary/diary.css'
+import './components/diary/buttonTray/buttonTray.css'
+import './components/diary/buttonTray/day/day.css'
+import './components/diary/diaryTable/diaryTable.css'
+
+
 import './components/diary/diary'
 
 //gets called in index.js to generate our page
