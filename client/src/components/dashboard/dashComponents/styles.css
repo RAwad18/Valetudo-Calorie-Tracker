@@ -41,9 +41,9 @@
 .unit {}
 
 .label {
-    font-size: medium;
+    font-size: 1.15rem;
+    margin-top: 0.1rem;
     font-weight: 500;
-    margin-top: 0.4rem;
 }
 
 .consumed .value {

@@ -5,10 +5,10 @@ import { calorieOverflow } from './calorieOverflow'
 import { updateItems } from '../../../api/api'
 
 
-const DiaryTable = ({ data }) => {
+const DiaryTable = ({ itemsList }) => {
 
   // Getting Global State --- Setting Local State
-  const [list, setList] = useState(data);
+  const [list, setList] = useState(itemsList);
   // console.log(list)
 
   useBeforeUnload(

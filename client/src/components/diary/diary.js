@@ -5,12 +5,12 @@ import DiaryTable from './diaryTable/diaryTable'
 import EmptyDiary from './diaryTable/empty'
 
 
-const Diary = ({ data }) => {
+const Diary = ({ itemsList }) => {
 
   return (
     <div className='diaryContainer'>
       <ButtonTray />
-      {!data.length ? <EmptyDiary /> : <DiaryTable data={data}/>}
+      {!itemsList.length ? <EmptyDiary /> : <DiaryTable itemsList={itemsList}/>}
     </div>
   )
 }

@@ -2,11 +2,11 @@ import React from "react";
 import Calories from "./dashComponents/calories";
 import Macros from "./dashComponents/macros";
 
-const Dashboard = () => {
+const Dashboard = ({ data }) => {
     return (
         <div className="dashboard">
-            <Calories/>
-            <Macros />
+            <Calories calories={data.calories} />
+            <Macros macros={{ protein: data.protein, carbs: data.carbs, fat: data.fat }} />
         </div>
     )
 }

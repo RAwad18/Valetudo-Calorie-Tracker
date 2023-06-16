@@ -1,11 +1,11 @@
 import React from "react";
 
 
-const Calories = () => {
+const Calories = ({ calories }) => {
     return (
         <div className="calorieContainer">
             <div className="consumed">
-                <div className="value">2000</div>
+                <div className="value">{calories}</div>
                 <div className="unit">kcal</div>
                 <div className="label">Consumed</div>
             </div>

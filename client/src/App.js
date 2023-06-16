@@ -34,13 +34,32 @@ const App = () => {
         dispatch(fetchPayload('06/08/2023'));
     }, [dispatch]);
 
-    const data = useSelector(state => state.calObj)
+    const itemsList = useSelector(state => state.calObj)
+
+    // Returns the 'total' of whatever property we want the sum of
+    // Every calorieObject has a property of 'calories', but not all of them have macros (ex. activity objects)
+    const dataCalculator = (list, property) => {
+        if (property === 'calories')
+            return list.reduce((accumulator, currentObject) => accumulator + currentObject[property], 0)
+
+        const containsProperty = list.filter(listItem => listItem[property]);
+        const propertyValues = containsProperty.map(object => object[property]);
+        return propertyValues.reduce((currentTotal, currentValue) => currentTotal + currentValue, 0)
+    }
+
+    // Totals of each property wrapped up in a neat little bow --- to be passed to the children
+    const data = {
+        calories: dataCalculator(itemsList, 'calories'),
+        protein: dataCalculator(itemsList, 'protein'),
+        carbs: dataCalculator(itemsList, 'carbs'),
+        fat: dataCalculator(itemsList, 'fat')
+    }
 
     return (
         <div className='supremeContainer'>
             <h1 onClick={() => { setClicks(3) }}>NUMBER OF CLICKS: {clicks}</h1>
-            <Dashboard />
-            <Diary data={data} />
+            <Dashboard data={data} />
+            <Diary itemsList={itemsList} />
         </div>
     );
 }
