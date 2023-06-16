@@ -14,14 +14,14 @@
     padding-left: 0.75em;
     padding-top: 0.5em;
     height: 100%;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .items {
     min-height: max-content;
     border: none;
     background-color: rgb(var(--third-color), 0.25);
-    font-size: 0.9rem;
+    font-size: 1.2rem;
 }
 
 .items:nth-child(even) {
@@ -41,12 +41,12 @@
 }
 
 .itemAmt {
-    width: 4%;
-    padding-right: 2rem;
+    width: 5%;
+    padding-right: 3rem;
 }
 
 .itemUnit {
-    width: 15%;
+    width: 20%;
     text-align: start;
     padding-right: 1rem;
 }

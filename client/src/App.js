@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import Dashboard from './components/dashboard/dashboard';
 import Diary from './components/diary/diary';
 
 import { fetchPayload } from './reducers/reducer';
@@ -37,6 +38,7 @@ const App = () => {
     return (
         <div className='supremeContainer'>
             <h1 onClick={() => { setClicks(3) }}>NUMBER OF CLICKS: {clicks}</h1>
+            <Dashboard />
             <Diary data={data} />
         </div>
     );

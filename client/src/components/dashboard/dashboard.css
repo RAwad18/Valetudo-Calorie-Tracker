@@ -1,0 +1,51 @@
+.dashboard {
+    margin-bottom: 0.5rem;
+    padding: 0.6rem 1rem;
+    padding-bottom: 0.75rem;
+    min-height: 70px;
+    border: 0.01rem solid rgb(var(--border-color), 0.25);
+    border-radius: 0.5rem;
+    background-color: rgb(var(--fourth-color), 0.5);
+}
+
+.dashboard{
+    min-width: max-content;
+    width: 85%;
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Dashboard Components */
+
+.calorieContainer, .macroContainer{
+    flex: 50%;
+    border-right: 1px solid black;
+    display: flex;
+}
+
+.calorieContainer > *, .macroContainer > *{
+    flex: initial;
+    margin-right: 2rem;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calorieContainer > *, .macroContainer > *{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calorieContainer{
+    border-right: 1px solid black;
+}
+
+.macroContainer{
+    border-left: 1px solid black;
+}
