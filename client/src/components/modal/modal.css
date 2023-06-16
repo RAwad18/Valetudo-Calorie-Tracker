@@ -1,0 +1,30 @@
+.modal,
+.overlay,
+.modal-flex-container {
+    width: 100dvw;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+}
+
+.overlay {
+    background: rgb(49, 49, 49, 0.8);
+
+}
+
+.modal-flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+}
+
+.modal-container {
+    width: 30%;
+    height: 70%;
+    background-color: red;
+    visibility: visible;
+}

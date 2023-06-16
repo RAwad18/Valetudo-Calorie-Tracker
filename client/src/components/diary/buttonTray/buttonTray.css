@@ -27,3 +27,9 @@
 .buttonTray button:hover {
     background-color: rgba(var(--second-color), 0.25);
 }
+
+
+/* Prevent Scroll on Modal */
+body.active-modal {
+    overflow-y: hidden;
+}

@@ -14,6 +14,7 @@ import './components/dashboard/dashComponents/styles.css'
 import './components/diary/diary.css'
 import './components/diary/buttonTray/buttonTray.css'
 import './components/diary/buttonTray/day/day.css'
+import './components/modal/modal.css'
 import './components/diary/diaryTable/diaryTable.css'
 
 
