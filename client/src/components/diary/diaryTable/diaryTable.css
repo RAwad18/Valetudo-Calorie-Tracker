@@ -58,8 +58,9 @@
 }
 
 .negCal {
-    color: #5dacbd;
-    color: rgb(var(--second-color, 1));
+    /* color: #5dacbd; */
+    /* color: rgb(var(--second-color, 1)); */
+    color: rgb(0, 168, 150);
     font-weight: 600;
 }
 

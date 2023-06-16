@@ -10,6 +10,7 @@ import { dateFormatter } from './functions/date.js'
 // Style Sheets
 import './styles.css'
 import './components/dashboard/dashboard.css'
+import './components/dashboard/dashComponents/styles.css'
 import './components/diary/diary.css'
 import './components/diary/buttonTray/buttonTray.css'
 import './components/diary/buttonTray/day/day.css'
