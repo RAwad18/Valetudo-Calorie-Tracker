@@ -5,7 +5,7 @@ import Dashboard from './components/dashboard/dashboard';
 import Diary from './components/diary/diary';
 
 import { fetchPayload } from './reducers/reducer';
-import { dateFormatter } from './functions/date.js'
+import { dateFormatter } from './functions/date.js';
 
 // Style Sheets
 import './styles.css'
