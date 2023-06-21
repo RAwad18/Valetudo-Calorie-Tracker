@@ -1,0 +1,36 @@
+/* Search Bar Styles */
+.search-bar-container {
+    display: flex;
+}
+
+.search-bar {
+    flex-grow: 15;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    border: 0.01rem solid rgb(var(--border-color), 0.25);
+    border-radius: 0.25rem;
+}
+
+.search-bar:focus {
+    outline-color: transparent;
+}
+
+.submit-btn {
+    margin-left: 2%;
+    flex-grow: 1;
+    font-size: 1rem;
+    border-color: transparent;
+    border-radius: 0.25em;
+    background-color: rgb(var(--fourth-color), 1);
+    padding: 0;
+}
+
+.submit-btn:hover {
+    background-color: rgba(var(--second-color), 0.25);
+}
+
+.submit-btn:focus-visible {
+    outline: none;
+}
+
+

@@ -12,7 +12,6 @@
 
 .overlay {
     background: rgb(49, 49, 49, 0.8);
-
 }
 
 .modal-flex-container {
@@ -23,8 +22,36 @@
 }
 
 .modal-container {
-    width: 30%;
-    height: 70%;
-    background-color: red;
+    width: 70%;
+    background-color: rgb(var(--third-color), 1);
     visibility: visible;
+    padding: 2%;
+    padding-bottom: 0;
+    border: 0.01rem solid rgb(var(--border-color), 0.25);
+    border-radius: 0.5rem;
+}
+
+.modal-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-label{
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-left: 0.1rem;
+}
+
+.modal-content {
+    flex-grow: 1;
+}
+
+.sponsor {
+    display: flex;
+    justify-content: end;
+}
+
+.sponsor img {
+    width: 15%;
+    height: auto;
 }

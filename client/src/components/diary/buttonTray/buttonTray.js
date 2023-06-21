@@ -7,9 +7,11 @@ const ButtonTray = () => {
 
   const [modal, setModal] = useState(false);
 
+
   const toggleModal = () => {
     setModal(!modal)
   }
+
 
   // 'active-modal' class has css which prevents scrolling 
   if (modal) {

@@ -32,3 +32,7 @@ body {
     padding-left: 2rem;
     background-color: rgba(var(--second-color), 0.4);
 }
+
+#portal {
+    font-family: var(--font, --backup);
+}

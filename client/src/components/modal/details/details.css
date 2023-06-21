@@ -1,0 +1,4 @@
+.details-container {
+    flex-grow: 1;
+    min-height: 200px;
+}

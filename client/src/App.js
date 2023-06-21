@@ -15,7 +15,10 @@ import './components/diary/diary.css'
 import './components/diary/buttonTray/buttonTray.css'
 import './components/diary/buttonTray/day/day.css'
 import './components/modal/modal.css'
+import './components/modal/searchbar/searchbar.css'
+import './components/modal/content/foodsearch.css'
 import './components/diary/diaryTable/diaryTable.css'
+import './components/modal/details/details.css'
 
 
 import './components/diary/diary'

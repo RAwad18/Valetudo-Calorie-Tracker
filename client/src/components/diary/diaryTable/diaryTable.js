@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { useBeforeUnload } from 'react-router-dom'
 
-import { calorieOverflow } from './calorieOverflow'
+import { calorieOverflow } from '../../../functions/calorieOverflow'
 import { updateItems } from '../../../api/api'
 
 

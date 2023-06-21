@@ -4,18 +4,21 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { BrowserRouter } from "react-router-dom"
+import 'dotenv/config'
 
 // Component(s)
 import App from './App';
 
 // Reducer(s)
 import calObjReducer from './reducers/reducer'
+import foodListReducer from './reducers/foodList'
 
 
 
 const store = configureStore({
     reducer: {
-        calObj: calObjReducer
+        calObj: calObjReducer,
+        foodList: foodListReducer
     }
 });
 
