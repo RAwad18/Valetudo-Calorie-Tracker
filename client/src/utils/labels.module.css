@@ -1,0 +1,16 @@
+.innerLabel__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerLabel__firstLn {
+    font-size: var(--size-base);
+    margin-bottom: calc(var(--space-xxs) * -1);
+}
+
+.innerLabel__secondLn {
+    font-size: var(--size-xs);
+    margin-bottom: var(--space-xxs);
+}

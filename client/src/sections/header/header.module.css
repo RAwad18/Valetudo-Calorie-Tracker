@@ -10,6 +10,7 @@
 }
 
 .header__title {
+    display: block;
     flex: 1;
     /* replica of h1 styling */
     font-size: 2em;
@@ -25,12 +26,12 @@
 
 /* xs */
 /* @media (min-width: 475px) {
-    
+
 } */
 
 /* sm */
 /* @media (min-width: 640px) {
-    
+
 } */
 
 /* md */
@@ -77,6 +78,5 @@
 
 /* 2xl */
 /* @media (min-width: 1536px) {
-
 
 } */

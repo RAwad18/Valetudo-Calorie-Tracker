@@ -1,0 +1,22 @@
+.date__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: var(--space-xxs);
+    padding-bottom: var(--space-xxs);
+    gap: var(--space-2xl);
+}
+
+.date__previous,
+.date__next {
+    display: block;
+    color: var(--clr-light);
+    width: var(--size-lg);
+    height: var(--size-lg);
+}
+
+.date__date {
+    color: var(--clr-light);
+    font-size: var(--size-xl);
+}
+

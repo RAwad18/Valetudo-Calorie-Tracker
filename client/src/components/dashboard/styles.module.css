@@ -1,0 +1,17 @@
+.ringContainer {
+    display: flex;
+    justify-content: space-around;
+    padding-top: var(--space-xxs);
+    padding-bottom: var(--space-lg);
+}
+
+.ringContainer__ring {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.labelContainer {
+    display: flex;
+    justify-content: space-around;
+}
