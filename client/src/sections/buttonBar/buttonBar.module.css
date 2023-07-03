@@ -1,0 +1,28 @@
+.button_bar__container {
+    margin-top: var(--space-xs);
+    border-radius: 1rem;
+    border-top: solid 1px var(--clr-border);
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    font-size: var(--size-base);
+}
+
+.button_bar__container button {
+    border: solid 1px var(--clr-border);
+    border-radius: 0.5em;
+    padding: var(--space-xxs) var(--space-xs);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-xxs);
+}
+
+.button_bar__container button svg {
+    width: 1em;
+    height: 1em;
+}

@@ -30,6 +30,20 @@
 
 } */
 
+.light-mode {
+    --clr-primary: #f4f4f5;
+    --clr-secondary: #d4d4d8;
+    --clr-text: #27272a;
+    --clr-border: rgba(0, 0, 0, 0.1);
+
+    --clr-baseline: #0f766e;
+    --clr-activity: #a855f7;
+    --clr-exercise: #eab308;
+
+    --clr-calories-remaining: #3b82f6;
+    --clr-calories-consumed: #f97316;
+
+}
 
 .btn {
     display: inline-block;
@@ -45,7 +59,9 @@
 
 /* Container Styling */
 
-.container{
+.container {
+    padding-left: var(--space-base);
+    padding-right: var(--space-base);
     border: solid 0px white;
 }
 

@@ -3,9 +3,6 @@
     justify-content: end;
     align-items: center;
     padding-top: var(--space-sm);
-    padding-bottom: var(--space-sm);
-    padding-left: var(--space-base);
-    padding-right: var(--space-base);
     gap: var(--space-base);
 }
 
@@ -13,7 +10,7 @@
     display: block;
     flex: 1;
     /* replica of h1 styling */
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 

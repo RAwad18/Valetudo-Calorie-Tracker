@@ -1,11 +1,4 @@
-.ringContainer {
-    display: flex;
-    justify-content: space-around;
-    padding-top: var(--space-xxs);
-    padding-bottom: var(--space-lg);
-}
-
-.ringContainer__ring {
+.ring {
     display: flex;
     flex-direction: column;
     align-items: center;

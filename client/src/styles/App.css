@@ -1,20 +1,21 @@
 :root {
   /* colors */
-  --clr-light: #cbd5e1;
-  --clr-dark: #27272a;
+  --clr-primary: #27272a;
+  --clr-secondary: #3f3f46;
+  --clr-text: #f4f4f5;
+  --clr-border: rgba(255, 255, 255, 0.1);
 
-  --clr-gray900: #374151;
 
-  --clr-emerald: #0f766e;
-  --clr-purple: #a855f7;
-  --clr-yellow: #eab308;
+  --clr-protein: #22c55e;
+  --clr-carbs: #3b82f6;
+  --clr-fat: #ef4444;
 
-  --clr-blue: #3b82f6;
-  --clr-orange: #f97316;
+  --clr-baseline: #0f766e;
+  --clr-activity: #a855f7;
+  --clr-exercise: #eab308;
 
-  --clr-green: #16a34a;
-  --clr-sky: #0ea5e9;
-  --clr-rose: #be123c;
+  --clr-calories-remaining: #3f3f46;
+  --clr-calories-consumed: #f97316;
 
   /* sizes */
   --size-xxs: 0.5rem;
@@ -54,8 +55,8 @@ html {
 
 body {
   font-family: 'General Sans', sans-serif;
-  background-color: var(--clr-dark);
-  color: var(--clr-light);
+  background-color: var(--clr-primary);
+  color: var(--clr-text);
 }
 
 .img,
@@ -77,19 +78,24 @@ button {
   color: inherit;
 }
 
-header {
-  padding-bottom: var(--space-xxs);
-  border-radius: 1rem;
-  border-bottom: solid 1px;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+
+/* Container Styling */
+.mobile_container {
+  display: flex;
+  flex-direction: column;
 }
 
-main {
-  margin-top: var(--space-sm);
-  position: fixed;
-  overflow-y: scroll;
-  max-height: 100%;
+.desktop_container {
+  display: none;
 }
+
+.mobile_dash_container {
+
+}
+
+
+
+/* Media Query References */
 
 /* xs */
 /* @media (min-width: 475px) {

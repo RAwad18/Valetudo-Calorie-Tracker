@@ -1,10 +1,22 @@
-/* xs */
-@media (min-width: 475px) {
-    .mobile_dash_container {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+.ring__container {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: var(--space-lg);
 }
+
+.mobile_dash_container {
+    padding-bottom: var(--space-xxs);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-bottom: solid 1px var(--clr-border);
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+/* xs */
+/* @media (min-width: 475px) {
+
+} */
 
 /* sm */
 /* @media (min-width: 640px) {

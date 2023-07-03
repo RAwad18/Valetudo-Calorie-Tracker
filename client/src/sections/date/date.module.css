@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: var(--space-xxs);
+    padding-top: var(--space-sm);
     padding-bottom: var(--space-xxs);
     gap: var(--space-2xl);
 }

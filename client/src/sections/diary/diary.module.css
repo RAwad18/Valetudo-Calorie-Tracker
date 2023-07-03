@@ -1,0 +1,51 @@
+.diary__container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border-radius: 1rem;
+    border-bottom: solid 1px var(--clr-border);
+}
+
+.diary__row {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    width: 100%;
+    padding: var(--space-xxs) var(--space-base);
+}
+
+.diary__row:nth-child(odd){
+    background-color: var(--clr-secondary);
+}
+
+.diary__row__leftside,
+.diary__row__rightside {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--size-xs);
+}
+
+.diary__row__leftside,
+.diary__row__leftside>* {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.diary__row__name {
+    font-size: var(--size-sm);
+    font-weight: bold;
+}
+
+.diary__row__info {
+    width: 85%;
+}
+
+.diary__row__calories {
+    font-size: var(--size-sm);
+}
+
+.diary__row__label {
+    text-align: end;
+}

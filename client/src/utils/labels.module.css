@@ -14,3 +14,7 @@
     font-size: var(--size-xs);
     margin-bottom: var(--space-xxs);
 }
+
+.outerLabel {
+    font-size: var(--size-base);
+}

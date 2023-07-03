@@ -11,6 +11,6 @@ export const InnerLabel = ({ firstLn, secondLn }) => {
 
 export const OuterLabel = ({ value }) => {
     return (
-        <div>{value}</div>
+        <div className={styles.outerLabel}>{value}</div>
     )
 }
