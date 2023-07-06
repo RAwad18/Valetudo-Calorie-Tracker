@@ -7,14 +7,18 @@ const consumed = 1900;
 const burned = 2801;
 const remaining = 480;
 
+export const ringStyle = {
+    size : 90,
+    thickness: 6
+}
 
 export const ConsumedCalories = () => {
 
     return (
         <div className={styles.ring}>
             <RingProgress
-                size={100}
-                thickness={8}
+                size={ringStyle.size}
+                thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
                     { value: 10, color: 'var(--clr-fat)' },
@@ -34,8 +38,8 @@ export const TotalCalories = () => {
     return (
         <div className={styles.ring}>
             <RingProgress
-                size={100}
-                thickness={8}
+                size={ringStyle.size}
+                thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
                     { value: 83, color: 'var(--clr-baseline)' },
@@ -55,8 +59,8 @@ export const RemainingCalories = () => {
     return (
         <div className={styles.ring}>
             <RingProgress
-                size={100}
-                thickness={8}
+                size={ringStyle.size}
+                thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
                     { value: 85, color: 'var(--clr-calories-consumed)' },

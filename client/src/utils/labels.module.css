@@ -3,18 +3,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: -10;
 }
 
 .innerLabel__firstLn {
-    font-size: var(--size-base);
-    margin-bottom: calc(var(--space-xxs) * -1);
+    font-size: 1rem;
+    margin-bottom: calc(var(--space-xs) * -1);
 }
 
 .innerLabel__secondLn {
     font-size: var(--size-xs);
-    margin-bottom: var(--space-xxs);
+    margin-top: var(--space-xxs);
 }
 
 .outerLabel {
-    font-size: var(--size-base);
+    font-size: var(--size-sm);
 }

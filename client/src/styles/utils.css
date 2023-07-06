@@ -34,6 +34,7 @@
     --clr-primary: #f4f4f5;
     --clr-secondary: #d4d4d8;
     --clr-text: #27272a;
+    --clr-text-secondary: rgb(39, 39, 42, 0.68); 
     --clr-border: rgba(0, 0, 0, 0.1);
 
     --clr-baseline: #0f766e;

@@ -9,8 +9,9 @@ const Dashboard = () => {
 
     const useStyles = createStyles(() => ({
         indicator: {
-            width: '0.4rem',
-            height: '0.4rem',
+            width: '0.3rem',
+            height: '0.3rem',
+            backgroundColor: 'var(--clr-text)'
         },
 
         control: {

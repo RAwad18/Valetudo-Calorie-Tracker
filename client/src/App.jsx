@@ -13,10 +13,11 @@ function App() {
   const [count, setCount] = useState(0);
 
 
-  // Theme Options
+  /* Theme Options */
   const [theme, setTheme] = useState(
     localStorage.getItem('theme') || ''
   );
+
   const toggleTheme = () => {
     if (theme === '') {
       setTheme('light-mode');
@@ -24,24 +25,29 @@ function App() {
       setTheme('');
     }
   };
+
   useEffect(() => {
     localStorage.setItem('theme', theme);
     document.body.className = theme;
   }, [theme]);
 
+
+  /* Return Statement */
   return (
     <>
-      <Header toggleTheme={toggleTheme}/>
       <div className="mobile_container">
-        <div className='mobile_dash_container'>
-          <Date />
-          <Dashboard />
-          <ButtonBar />
-        </div>
+        <Header toggleTheme={toggleTheme} />
+        <Date />
+        <Dashboard />
+        <ButtonBar />
         <Diary />
       </div>
-      <div className="desktop_container">
 
+      <div className="desktop_container">
+        <Diary />
+        {/* <Date />
+        <Dashboard /> */}
+        <ButtonBar />
       </div>
     </>
   )

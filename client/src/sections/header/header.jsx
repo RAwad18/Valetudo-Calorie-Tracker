@@ -3,7 +3,7 @@ import styles from './header.module.css'
 const Header = ({ toggleTheme }) => {
 
     return (
-        <div className={`${styles.header} container`}>
+        <div className={`${styles.header}`}>
             <div className={styles.header__title}>Valetudo</div>
             <button className={styles.header__sun} onClick={toggleTheme}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">

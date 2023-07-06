@@ -1,5 +1,6 @@
 import { RingProgress } from '@mantine/core';
 import { InnerLabel, OuterLabel } from '../../utils/labels';
+import { ringStyle } from './calories';
 
 import styles from './styles.module.css'
 
@@ -11,8 +12,8 @@ export const Carbs = () => {
     return (
         <div className={styles.ring}>
             <RingProgress
-                size={100}
-                thickness={8}
+                size={ringStyle.size}
+                thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
                     { value: 100, color: 'var(--clr-carbs)' },
@@ -30,8 +31,8 @@ export const Protein = () => {
     return (
         <div className={styles.ring}>
             <RingProgress
-                size={100}
-                thickness={8}
+                size={ringStyle.size}
+                thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
                     { value: 85, color: 'var(--clr-protein)' },
@@ -50,8 +51,8 @@ export const Fat = () => {
     return (
         <div className={styles.ring}>
             <RingProgress
-                size={100}
-                thickness={8}
+                size={ringStyle.size}
+                thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
                     { value: 60, color: 'var(--clr-fat)' },

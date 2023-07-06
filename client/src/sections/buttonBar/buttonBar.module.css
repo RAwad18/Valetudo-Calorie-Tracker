@@ -2,14 +2,14 @@
     margin-top: var(--space-xs);
     border-radius: 1rem;
     border-top: solid 1px var(--clr-border);
-    padding-top: var(--space-xs);
+    padding-top: var(--space-xxs);
     padding-bottom: var(--space-xs);
 
     display: flex;
     justify-content: space-around;
     align-items: center;
 
-    font-size: var(--size-base);
+    font-size: var(--size-sm);
 }
 
 .button_bar__container button {

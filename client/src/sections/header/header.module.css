@@ -2,7 +2,8 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-top: var(--space-sm);
+    padding-top: var(--space-xxs);
+    padding-left: var(--space-xs);
     gap: var(--space-base);
 }
 

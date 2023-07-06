@@ -3,8 +3,8 @@
   --clr-primary: #27272a;
   --clr-secondary: #3f3f46;
   --clr-text: #f4f4f5;
+  --clr-text-secondary: rgb(244, 244, 245, 0.68);
   --clr-border: rgba(255, 255, 255, 0.1);
-
 
   --clr-protein: #22c55e;
   --clr-carbs: #3b82f6;
@@ -16,6 +16,13 @@
 
   --clr-calories-remaining: #3f3f46;
   --clr-calories-consumed: #f97316;
+
+  /* standard sizes */
+  --text-sm: 0.75rem;
+  --text-base: 0.875rem;
+  --text-lg: 1rem;
+  --text-xl: 1.125rem;
+  --text-header: 1.5rem;
 
   /* sizes */
   --size-xxs: 0.5rem;
@@ -57,6 +64,7 @@ body {
   font-family: 'General Sans', sans-serif;
   background-color: var(--clr-primary);
   color: var(--clr-text);
+
 }
 
 .img,
@@ -83,14 +91,27 @@ button {
 .mobile_container {
   display: flex;
   flex-direction: column;
+  height: 100dvh;
 }
 
 .desktop_container {
   display: none;
 }
 
-.mobile_dash_container {
+/* lg */
+@media (min-width: 1024px) {
+  .desktop_container {
+    padding: var(--space-base);
+    max-height: 70%;
+    display: grid;
+    grid-template-rows: auto 10fr;
+    grid-template-columns: 4fr 1fr;
+    gap: 0 var(--space-base);
+  }
 
+  .mobile_container {
+    display: none;
+  }
 }
 
 

@@ -9,8 +9,8 @@
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     border-bottom: solid 1px var(--clr-border);
-    padding-left: 5%;
-    padding-right: 5%;
+    /* padding-left: 5%;
+    padding-right: 5%; */
 }
 
 /* xs */

@@ -6,7 +6,7 @@ const Diary = () => {
         return (
             <div className={styles.diary__row}>
 
-                <div className={styles.diary__row__icon}>x</div>
+                {/* <div className={styles.diary__row__icon}>x</div> */}
 
                 <div className={styles.diary__row__leftside}>
                     <div className={`${styles.diary__row__name} ${styles.diary__row__top}`}>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur consequatur modi omnis libero asperiores beatae maiores officiis laudantium, numquam at nemo alias non dolores autem. Officiis architecto ratione accusamus aut?</div>
@@ -45,7 +45,21 @@ const Diary = () => {
             {list()}
             {list()}
             {list()}
-            {list()}
+            <div className={styles.diary__row}>
+
+                {/* <div className={styles.diary__row__icon}>x</div> */}
+
+                <div className={styles.diary__row__leftside}>
+                    <div className={`${styles.diary__row__name} ${styles.diary__row__top}`}>I am the last item</div>
+
+                    <div className={`${styles.diary__row__bottom} ${styles.diary__row__info}`}>final item</div>
+                </div>
+
+                <div className={styles.diary__row__rightside}>
+                    <div className={`${styles.diary__row__calories} ${styles.diary__row__top}`}>500.0</div>
+                    <div className={`${styles.diary__row__bottom} ${styles.diary__row__label}`}>kcal</div>
+                </div>
+            </div>
         </div>
     )
 }
