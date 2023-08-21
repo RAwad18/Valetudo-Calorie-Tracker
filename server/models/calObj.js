@@ -39,6 +39,7 @@ const calObjSchema = mongoose.Schema({
     fat: { type: Number, required: function () { return this.objType === 'food' } },
     // MIGHT ADD MICRONUTRIENTS
     // MIGHT ADD A PICTURE (apple for food, stick man running for activity) --- the picture gets added via controllers (u get me?)
+    
 });
 
 const CalObj = mongoose.model('CalObj', calObjSchema);

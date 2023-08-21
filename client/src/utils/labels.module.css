@@ -7,7 +7,7 @@
 }
 
 .innerLabel__firstLn {
-    font-size: 1rem;
+    font-size: var(--size-sm);
     margin-bottom: calc(var(--space-xs) * -1);
 }
 

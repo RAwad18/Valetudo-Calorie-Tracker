@@ -1,10 +1,44 @@
 .date__container {
     display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding-bottom: var(--space-xs);
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: solid 1px var(--clr-border);
+}
+
+.date__buttons {
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: var(--space-xxs);
-    padding-bottom: var(--space-xxs);
     gap: var(--space-2xl);
+
+}
+
+.date__mobile__calendar,
+.date__calendar {
+    display: flex;
+    border-radius: 1rem;
+    padding: var(--space-xxs);
+    font-size: 0.9rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* overflow: hidden; */
+    /* border: solid 1px var(--clr-border); */
+}
+
+.date__mobile__calendar {
+    padding: 0;
+    border: solid 1px var(--clr-border);
+    overflow: hidden;
+    min-width: 280px;
+    max-width: 350px;
+    height: auto;
+}
+
+.date__calendar {
+    display: none;
 }
 
 .date__previous,
@@ -20,3 +54,74 @@
     font-size: var(--size-lg);
 }
 
+.date__calendar_btn {
+    display: none;
+}
+
+/* 
+@media (min-width: 375px) {
+
+} */
+
+/* xs */
+/* @media (min-width: 475px) {
+
+} */
+
+/* sm */
+@media (min-width: 640px) {
+    .date__date {
+        font-size: var(--size-xl);
+    }
+}
+
+/* md */
+@media (min-width: 768px) {
+
+    .date__previous,
+    .date__next {
+        width: var(--size-lg);
+        height: var(--size-lg);
+    }
+
+    .date__date {
+        font-size: var(--size-2xl);
+    }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+
+    .date__container {
+        width: 100%;
+        border: solid 1px var(--clr-border);
+        border-radius: 1rem;
+        padding: 0;
+        padding: var(--space-xxs);
+    }
+
+    .date__calendar_btn {
+        display: block;
+        color: var(--clr-light);
+        width: var(--size-base);
+        height: var(--size-base);
+    }
+
+    .date__calendar {
+        display: flex;
+    }
+
+    .date__modal {
+        display: none;
+    }
+}
+
+/* xl */
+/* @media (min-width: 1280px) {
+
+} */
+
+/* 2xl */
+/* @media (min-width: 1536px) {
+
+} */

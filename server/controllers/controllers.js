@@ -17,7 +17,7 @@ export const getOne = async (req, res) => {
 
 export const getAll = async (req, res) => {
     const { date } = req.query;
-
+    console.log("Get ALL")
     try {
         if (!await DataArray.exists({ date: date }))
             res.status(404).json(`No objects with the date of ${date} exist`)
@@ -32,9 +32,9 @@ export const getAll = async (req, res) => {
 
 
 export const addOne = async (req, res) => {
-    console.log(req.body);
     const data = req.body;
     const newCalObj = new CalObj(data);
+    await newCalObj.save();
 
     try {
         if (await DataArray.exists({ date: newCalObj.date })) {
@@ -46,7 +46,6 @@ export const addOne = async (req, res) => {
             const list = new DataArray({ date: newCalObj.date, data: [newCalObj._id] });
             await list.save();
         }
-        await newCalObj.save();
         res.status(201).json(newCalObj);
     } catch (error) {
         res.status(409).send({ message: error.message });
@@ -70,11 +69,13 @@ export const updateOne = async (req, res) => {
 }
 
 export const updateAll = async (req, res) => {
-    const data = req.body;
-    const date = data[0].date;
-    const update = data.map(object => mongoose.Types.ObjectId(object._id));
-    
+    console.log("////////////////////////////")
+    console.log(req.body)
+    console.log("////////////////////////////")
     try {
+        const data = req.body;
+        const date = data[0].date;
+        const update = data.map(object => mongoose.Types.ObjectId(object._id));
         const list = await DataArray.findOne({date: date}).exec();
         list.data = update;
         await list.save();
@@ -90,7 +91,7 @@ export const deleteOne = async (req, res) => {
 
     try {
         const obj = await CalObj.findByIdAndDelete(id);
-        res.status(200).send(obj);
+        res.status(202).send(obj);
     } catch (error) {
         res.status(404).send({ error: error.message });
     }
@@ -102,7 +103,7 @@ export const deleteAll = async (req, res) => {
     try {
         await DataArray.deleteOne(filter)
         await CalObj.deleteMany(filter)
-        res.status(204)
+        res.status(204).end()
     } catch (error) {
         res.status(404).send({ error: error.message })
     }

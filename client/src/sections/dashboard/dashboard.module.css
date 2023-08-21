@@ -1,16 +1,15 @@
 .ring__container {
     display: flex;
     justify-content: space-around;
-    padding-bottom: var(--space-lg);
+    padding-bottom: 1.25rem;
 }
 
-.mobile_dash_container {
+.dash_container {
     padding-bottom: var(--space-xxs);
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-    border-bottom: solid 1px var(--clr-border);
-    /* padding-left: 5%;
-    padding-right: 5%; */
+}
+
+.desktop_dash_container {
+    display: none;
 }
 
 /* xs */
@@ -29,9 +28,14 @@
 } */
 
 /* lg */
-/* @media (min-width: 1024px) {
-
-} */
+@media (min-width: 1024px) {
+    .dash_container {
+        border: solid 1px var(--clr-border);
+        border-radius: 1rem;
+        padding-top: var(--space-xxs);
+        padding-bottom: 0;
+    }
+}
 
 /* xl */
 /* @media (min-width: 1280px) {

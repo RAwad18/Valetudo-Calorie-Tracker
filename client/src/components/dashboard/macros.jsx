@@ -1,14 +1,21 @@
 import { RingProgress } from '@mantine/core';
 import { InnerLabel, OuterLabel } from '../../utils/labels';
 import { ringStyle } from './calories';
+// import { percentCalculator } from './calories';
 
 import styles from './styles.module.css'
 
-const carbs = '200g';
-const protein = '120g';
-const fat = '35g';
+const percentCalculator = (value, total) => {
+    if(total === 0)
+        return ((value / 1) * 100).toFixed(2)
+        
+    return ((value / total) * 100).toFixed(2)
+}
 
-export const Carbs = () => {
+
+export const Carbs = ({ consumed = 0, goal = 1, outerLabel = true }) => {
+
+    const fillValue = percentCalculator(consumed, goal)
     return (
         <div className={styles.ring}>
             <RingProgress
@@ -16,18 +23,22 @@ export const Carbs = () => {
                 thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
-                    { value: 100, color: 'var(--clr-carbs)' },
+                    { value: fillValue, color: 'var(--clr-carbs)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={carbs} secondLn={'N/A'} />
+                    <InnerLabel firstLn={`${consumed}g`} secondLn={`${goal}g`} />
                 }
             />
-            <OuterLabel value={'Net Carbs'} />
+            {outerLabel ? <OuterLabel value={'Net Carbs'} /> : null}
+
         </div>
     )
 }
 
-export const Protein = () => {
+export const Protein = ({ consumed = 0, goal = 1, outerLabel = true }) => {
+
+    const fillValue = percentCalculator(consumed, goal)
+
     return (
         <div className={styles.ring}>
             <RingProgress
@@ -35,19 +46,22 @@ export const Protein = () => {
                 thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
-                    { value: 85, color: 'var(--clr-protein)' },
+                    { value: fillValue, color: 'var(--clr-protein)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={protein} secondLn={'N/A'} />
-                }
+                    <InnerLabel firstLn={`${consumed}g`} secondLn={`${goal}g`} />}
             />
-            <OuterLabel value={'Protein'} />
+            {outerLabel ? <OuterLabel value={'Protein'} /> : null}
+
         </div>
     )
 }
 
 
-export const Fat = () => {
+export const Fat = ({ consumed = 0, goal = 1, outerLabel = true }) => {
+
+    const fillValue = percentCalculator(consumed, goal)
+
     return (
         <div className={styles.ring}>
             <RingProgress
@@ -55,13 +69,14 @@ export const Fat = () => {
                 thickness={ringStyle.thickness}
                 rootColor='var(--clr-secondary)'
                 sections={[
-                    { value: 60, color: 'var(--clr-fat)' },
+                    { value: fillValue, color: 'var(--clr-fat)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={fat} secondLn={'N/A'} />
+                    <InnerLabel firstLn={`${consumed}g`} secondLn={`${goal}g`} />
                 }
             />
-            <OuterLabel value={'Fat'} />
+            {outerLabel ? <OuterLabel value={'Fat'} /> : null}
+
         </div>
     )
 }

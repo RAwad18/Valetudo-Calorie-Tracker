@@ -1,15 +1,12 @@
 .button_bar__container {
-    margin-top: var(--space-xs);
-    border-radius: 1rem;
-    border-top: solid 1px var(--clr-border);
-    padding-top: var(--space-xxs);
-    padding-bottom: var(--space-xs);
-
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     font-size: var(--size-sm);
+
+    /* Remove/Adjust after adding multiple buttons */
+    justify-content: start;
+    padding-left: var(--space-base);
 }
 
 .button_bar__container button {

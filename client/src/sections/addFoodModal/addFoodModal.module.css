@@ -1,0 +1,83 @@
+.content_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+
+    background-color: var(--clr-primary);
+    padding: var(--space-base);
+
+    height: 100%;
+    max-height: 100%;
+    width: 100%;
+    max-width: 100%;
+
+    border-radius: 1rem;
+}
+
+.exit_btn {
+    display: block;
+    align-self: flex-end;
+    height: 1.25em;
+    width: 1.25em;
+    border-radius: 1em;
+}
+
+.search {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.search__bar {
+    flex: 1;
+    min-width: 170px;
+    background-color: var(--clr-secondary);
+    border: none;
+    border-radius: var(--space-base);
+    padding-left: 1rem;
+    color: var(--clr-text);
+}
+
+.search__bar:focus {
+    outline: transparent;
+}
+
+.search__btn {
+    border-radius: 1em;
+    padding: var(--space-xs);
+    font-size: var(--text-base);
+}
+
+.results {
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-xs);
+    flex: 1;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+}
+
+.itemData_container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-base);
+}
+
+.nix_logo {
+    width: 10rem;
+    align-self: center;
+    background-color: var(--clr-secondary);
+    border-radius: 1rem;
+}
+
+
+@media (min-width: 320px) {
+    .nix_logo {
+        align-self: flex-end;
+    }
+}
+
+@media (min-width: 375px) {
+    .search__btn {
+        font-size: var(--text-lg);
+    }
+}
+

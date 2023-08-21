@@ -1,0 +1,111 @@
+.mobile_container {}
+
+.desktop_container {
+    display: none;
+}
+
+.itemdata__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-sm);
+    background-color: var(--clr-primary);
+    border-radius: 1rem;
+    padding: var(--space-sm);
+    /* width: 100%; */
+}
+
+.itemdata__exit_btn {
+    display: block;
+    align-self: flex-end;
+    margin-right: var(--space-xxs);
+    margin-bottom: -1rem;
+    height: 1.25em;
+    width: 1.25em;
+    color: var(--clr-text);
+    z-index: 1;
+}
+
+.itemdata__item_name {
+    text-align: center;
+    font-weight: 600;
+}
+
+.itemdata__amount,
+.itemdata__serving_size {
+    display: flex;
+    padding-left: var(--space-sm);
+    padding-right: var(--space-sm);
+    font-size: var(--size-sm);
+}
+
+span {
+    flex: 1;
+}
+
+.itemdata__amount input, .itemdata__serving_size select {
+    width: 100px;
+    background-color: var(--clr-secondary);
+    border: none;
+    border-radius: 0.25rem;
+    color: var(--clr-text);
+    text-align: end;
+    padding-left: var(--space-xs);
+    padding-right: var(--space-xs);
+}
+
+.itemdata__serving_size select { 
+    background-color: var(--clr-primary);
+    flex: 2;
+}
+
+.itemdata__amount input:focus {
+    outline: transparent;
+}
+
+.itemdata__carousel {
+    /* width: 100%; */
+}
+
+.carousel__calorieSlide,
+.carousel__macrosSlide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-xxs);
+    margin-bottom: var(--space-sm);
+}
+
+.labelP {
+    color: var(--clr-protein);
+}
+
+.labelC {
+    color: var(--clr-carbs);
+}
+
+.labelF {
+    color: var(--clr-fat);
+}
+
+
+@media (min-width: 1024px) {
+    .mobile_container {
+        display: none;
+    }
+
+    .desktop_container {
+        display: flex;
+    }
+
+    .itemdata__container {
+        border: solid 1px var(--clr-border);
+        border-radius: 1rem;
+        padding: var(--space-xxs);
+    }
+
+    .carousel__calorieSlide,
+    .carousel__macrosSlide {
+        margin-bottom: 0;
+    }
+}

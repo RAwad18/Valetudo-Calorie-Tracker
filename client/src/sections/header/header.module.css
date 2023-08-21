@@ -2,8 +2,6 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    padding-top: var(--space-xxs);
-    padding-left: var(--space-xs);
     gap: var(--space-base);
 }
 
@@ -11,7 +9,7 @@
     display: block;
     flex: 1;
     /* replica of h1 styling */
-    font-size: 1.5em;
+    font-size: var(--size-2xl);
     font-weight: bold;
 }
 
@@ -28,9 +26,11 @@
 } */
 
 /* sm */
-/* @media (min-width: 640px) {
-
-} */
+@media (min-width: 640px) {
+    .header__title {
+        font-size: var(--size-3xl);
+    }
+}
 
 /* md */
 @media (min-width: 768px) {
@@ -53,20 +53,12 @@
 }
 
 /* lg */
-@media (min-width: 1024px) {
-    .header {
-        padding-left: var(--space-lg);
-        padding-right: var(--space-lg);
-    }
-}
+/* @media (min-width: 1024px) {
+
+} */
 
 /* xl */
 @media (min-width: 1280px) {
-    .header {
-        padding-left: var(--space-xl);
-        padding-right: var(--space-xl);
-    }
-
     .header__sun,
     .header__account {
         width: var(--size-4xl);

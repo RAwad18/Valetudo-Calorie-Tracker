@@ -2,6 +2,7 @@
   /* colors */
   --clr-primary: #27272a;
   --clr-secondary: #3f3f46;
+  --clr-modal: rgb(63, 63, 70, 0.9);
   --clr-text: #f4f4f5;
   --clr-text-secondary: rgb(244, 244, 245, 0.68);
   --clr-border: rgba(255, 255, 255, 0.1);
@@ -64,7 +65,7 @@ body {
   font-family: 'General Sans', sans-serif;
   background-color: var(--clr-primary);
   color: var(--clr-text);
-
+  min-width: 280px;
 }
 
 .img,
@@ -86,10 +87,17 @@ button {
   color: inherit;
 }
 
+button:hover {
+  background: var(--clr-secondary);
+}
+
 
 /* Container Styling */
 .mobile_container {
   display: flex;
+  padding-top: var(--space-xxs);
+  padding-bottom: var(--space-xxs);
+  gap: var(--space-xs);
   flex-direction: column;
   height: 100dvh;
 }
@@ -98,20 +106,35 @@ button {
   display: none;
 }
 
-/* lg */
-@media (min-width: 1024px) {
-  .desktop_container {
-    padding: var(--space-base);
-    max-height: 70%;
-    display: grid;
-    grid-template-rows: auto 10fr;
-    grid-template-columns: 4fr 1fr;
-    gap: 0 var(--space-base);
-  }
+.dash {
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--space-xs);
+  gap: var(--space-xs);
 
-  .mobile_container {
-    display: none;
-  }
+  border: solid 1px var(--clr-border);
+  border-radius: 1rem;
+}
+
+.grid {
+  display: flex;
+  gap: var(--space-base);
+  min-width: 0;
+  min-height: 500px
+}
+
+.grid__left_side {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.grid__right_side {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  overflow: auto;
+  gap: var(--space-sm);
 }
 
 
@@ -134,14 +157,31 @@ button {
 } */
 
 /* lg */
-/* @media (min-width: 1024px) {
+@media (min-width: 1024px) {
+  .desktop_container {
+    display: flex;
+    padding-top: var(--space-xxs);
+    padding-bottom: var(--space-xxs);
+    gap: var(--space-base);
+    flex-direction: column;
+    height: 100dvh;
+  }
 
-} */
+  .mobile_container {
+    display: none;
+  }
+}
 
 /* xl */
-/* @media (min-width: 1280px) {
-
-} */
+@media (min-width: 1280px) {
+  .grid__left_side {
+    width: 75%;
+  }
+  
+  .grid__right_side {
+    width: 25%;
+  }
+}
 
 /* 2xl */
 /* @media (min-width: 1536px) {
