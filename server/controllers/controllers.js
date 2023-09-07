@@ -17,10 +17,10 @@ export const getOne = async (req, res) => {
 
 export const getAll = async (req, res) => {
     const { date } = req.query;
-    console.log("Get ALL")
+    // console.log("Get ALL")
     try {
         if (!await DataArray.exists({ date: date }))
-            res.status(404).json(`No objects with the date of ${date} exist`)
+            res.status(200).json([])
         else {
             const list = await DataArray.findOne({ date: date }).populate('data').exec();
             res.status(200).json(list.data)
@@ -33,10 +33,11 @@ export const getAll = async (req, res) => {
 
 export const addOne = async (req, res) => {
     const data = req.body;
-    const newCalObj = new CalObj(data);
-    await newCalObj.save();
-
+    
     try {
+        const newCalObj = new CalObj(data);
+        await newCalObj.save();
+        
         if (await DataArray.exists({ date: newCalObj.date })) {
             const list = await DataArray.findOne({ date: newCalObj.date });
             list.data.push(newCalObj._id);
@@ -46,9 +47,11 @@ export const addOne = async (req, res) => {
             const list = new DataArray({ date: newCalObj.date, data: [newCalObj._id] });
             await list.save();
         }
-        res.status(201).json(newCalObj);
+        const list = await DataArray.findOne({ date: newCalObj.date }).populate('data').exec()
+        res.status(201).json({addedItem: newCalObj, list: list.data});
     } catch (error) {
-        res.status(409).send({ message: error.message });
+        console.log(error)
+        res.status(409).json({ message: error.message });
     }
 }
 
@@ -69,17 +72,18 @@ export const updateOne = async (req, res) => {
 }
 
 export const updateAll = async (req, res) => {
-    console.log("////////////////////////////")
-    console.log(req.body)
-    console.log("////////////////////////////")
+    // console.log("////////////////////////////")
+    // console.log(req.body)
+    // console.log("////////////////////////////")
     try {
         const data = req.body;
+        console.log(data)
         const date = data[0].date;
         const update = data.map(object => mongoose.Types.ObjectId(object._id));
         const list = await DataArray.findOne({date: date}).exec();
         list.data = update;
         await list.save();
-        res.status(200).json(list);
+        res.status(200).json(list.data);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }

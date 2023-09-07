@@ -28,7 +28,7 @@ export const ItemDataCalories = ({ item, outerLabel = true }) => {
                     {value: exerciseFillValue, color: 'var(--clr-calories-consumed)'}
                 ]}
                 label={
-                    <InnerLabel firstLn={calories} secondLn={'kcal'} />
+                    <InnerLabel firstLn={Math.round(calories)} secondLn={'kcal'} />
                 }
             />
             {outerLabel ? <OuterLabel value={'Consumed'} /> : null}

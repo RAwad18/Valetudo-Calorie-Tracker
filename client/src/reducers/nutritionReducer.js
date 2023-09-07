@@ -11,11 +11,21 @@ const nutritionSlice = createSlice({
     },
     reducers: {
         updateNutrition(state, action) {
+
+            if (action.payload.length === 0)
+                return state = {
+                    netCalories: 0,
+                    consumedCalories: 0,
+                    protein: 0,
+                    netCarbs: 0,
+                    fat: 0
+                }
+
             const data = {
                 netCalories: dataCalculator(action.payload, 'netCalories'),
                 consumedCalories: dataCalculator(action.payload, 'consumedCalories'),
                 protein: dataCalculator(action.payload, 'protein'),
-                netCarbs: dataCalculator(action.payload, 'carbs'),
+                netCarbs: dataCalculator(action.payload, 'netCarbs'),
                 fat: dataCalculator(action.payload, 'fat')
             }
 
@@ -35,7 +45,7 @@ const dataCalculator = (list, property) => {
         return list.reduce((accumulator, currentObject) => accumulator + currentObject['calories'], 0)
 
     if (property === 'consumedCalories') {
-        const isFood = list.filter(listItem => listItem.objType === 'food');
+        const isFood = list.filter(listItem => listItem.type === 'food');
         return isFood.reduce((accumulator, currentObject) => accumulator + currentObject['calories'], 0)
     }
 

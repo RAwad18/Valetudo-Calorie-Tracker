@@ -19,27 +19,30 @@ const ItemDataCore = () => {
     }
 
     return (
-        <div className={`${styles.itemdata__container} container`}>
+        <div className={`${styles.itemdata__container}`}>
             <button className={`${styles.itemdata__exit_btn}`} onClick={onClickHandler}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path fill-rule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+                    <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clipRule="evenodd" />
                 </svg>
             </button>
             <div className={styles.itemdata__item_name}>{currentItem.name}</div>
 
-            <div className={styles.itemdata__amount}>
-                <span>Amount</span>
-                <input type="text" placeholder="2" value=""/>
+            <div className={styles.amount_container}>
+                <div className={styles.itemdata__amount}>
+                    <span>Amount</span>
+                    <input type="text" placeholder="2" />
+                </div>
+                <div className={styles.itemdata__serving_size}>
+                    <span>Serving Size</span>
+                    <select>
+                        <option value="volvo">extra large - 56g</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </div>
             </div>
-            <div className={styles.itemdata__serving_size}>
-                <span>Serving Size</span>
-                <select>
-                    <option value="volvo">extra large - 56g</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
-                </select>
-            </div>
+
 
             <div className={styles.carousel__calorieSlide}>
                 <ItemDataCalories item={currentItem} outerLabel={false} />

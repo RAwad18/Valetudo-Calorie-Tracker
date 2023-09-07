@@ -5,6 +5,7 @@ import { fetchData } from '../../reducers/diaryItemsReducer';
 import ButtonBar from '../buttonBar/buttonBar'
 import DiaryContent from '../../components/diary/diaryContent';
 import styles from './diary.module.css'
+import { updateNutrition } from '../../reducers/nutritionReducer';
 
 
 
@@ -13,12 +14,21 @@ const Diary = () => {
 
     /* Retrieve Diary Items */
     const dispatch = useDispatch();
+    const date = useSelector(state => state.date.date)
+
 
     useEffect(() => {
-        dispatch(fetchData('07/30/2023'))
-    }, [dispatch]);
+        dispatch(fetchData(date))
+    }, [date]);
+    
 
     const diaryItems = useSelector(state => state.diaryItems);
+
+    useEffect(() => {
+        dispatch(updateNutrition(diaryItems))
+    }, [diaryItems]);
+
+
 
     /* JSX */
     return (
@@ -26,7 +36,7 @@ const Diary = () => {
             <div className={styles.button_bar}>
                 <ButtonBar />
             </div>
-            {diaryItems.length > 0 && <DiaryContent diaryItems={diaryItems} />}
+            {diaryItems.length > 0 && <DiaryContent />}
         </div>
     )
 }

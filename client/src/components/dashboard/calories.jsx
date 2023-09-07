@@ -38,7 +38,7 @@ export const ConsumedCalories = ({ consumed = 0, carbs = 0, protein = 0, fat = 0
                     { value: proteinFillValue, color: 'var(--clr-protein)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={consumed} secondLn={'kcal'} />
+                    <InnerLabel firstLn={Math.round(consumed)} secondLn={'kcal'} />
                 }
             />
             {outerLabel ? <OuterLabel value={'Consumed'} /> : null}

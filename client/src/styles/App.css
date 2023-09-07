@@ -91,6 +91,10 @@ button:hover {
   background: var(--clr-secondary);
 }
 
+button:active {
+  transform: translateY(2px);
+}
+
 
 /* Container Styling */
 .mobile_container {

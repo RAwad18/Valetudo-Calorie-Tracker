@@ -1,7 +1,45 @@
 import mongoose from "mongoose";
 
+const PerGramSchema = new mongoose.Schema({
+    calories: {
+        type: Number,
+        required: [true, 'Error! No "Calorie Per Gram" provided!']
+    },
+    protein: {
+        type: Number,
+        required: [true, 'Error! No "Protein Per Gram" provided!']
+    },
+    netCarbs: {
+        type: Number,
+        required: [true, 'Error! No "Net Carbs Per Gram" provided!']
+    },
+    fat: {
+        type: Number,
+        required: [true, 'Error! No "Fat Per Gram" provided!']
+    },
+});
+
+const AltMeasuresSchema = new mongoose.Schema({
+    serving_weight: {
+        type: Number,
+        required: true
+    },
+    measure: {
+        type: String,
+        required: true
+    },
+    seq: {
+        type: Number,
+        required: false
+    },
+    qty: {
+        type: Number,
+        required: true
+    },
+});
+
 const calObjSchema = mongoose.Schema({
-    objType: {
+    type: {
         type: String,
         required: [true, 'Error! No type!'],
         enum: {
@@ -17,30 +55,39 @@ const calObjSchema = mongoose.Schema({
         validate: {
             validator: function (value) {
                 if (this.objType === 'activity')
-                    return value < 0
+                    return value <= 0
                 else
-                    return value > 0
+                    return value >= 0
             },
             message: props => `${props.value} is not a valid for this type`
         }
     },
-    // idk whether to make duration a number or a string
-    amount: {
-        type: Number,
-        required: true
-    },
-    unit: {
-        type: String,
-        required: true
-    },
-    // MIGHT change type --- instead of number, it would be string (store 38g instead of just 38)
     protein: { type: Number, required: function () { return this.objType === 'food' } },
-    carbs: { type: Number, required: function () { return this.objType === 'food' } },
+    netCarbs: { type: Number, required: function () { return this.objType === 'food' } },
     fat: { type: Number, required: function () { return this.objType === 'food' } },
-    // MIGHT ADD MICRONUTRIENTS
-    // MIGHT ADD A PICTURE (apple for food, stick man running for activity) --- the picture gets added via controllers (u get me?)
-    
+    perGram: {
+        type: PerGramSchema,
+        required: function () { return this.objType === 'food' }
+    },
+    serving_qty: {
+        type: Number,
+        required: function () { return this.objType === 'food' }
+    },
+    serving_unit: {
+        type: String,
+        required: function () { return this.objType === 'food' }
+    },
+    serving_weight_grams: {
+        type: Number,
+        required: function () { return this.objType === 'food' }
+    },
+    alt_measures: {
+        type: [AltMeasuresSchema],
+        required: function () { return this.objType === 'food' }
+    }
 });
+
+
 
 const CalObj = mongoose.model('CalObj', calObjSchema);
 

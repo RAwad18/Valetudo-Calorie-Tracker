@@ -16,7 +16,29 @@ export const fetchData = (date) => async (dispatch) => {
         const { data } = await api.getList(date);
         dispatch(setDiaryItems(data))
     } catch (error) {
-        console.log(error.message)
+        console.log(error)
+    }
+}
+
+export const addItem = (newItem) => async (dispatch) => {
+    try {
+        const payload = { ...newItem }
+        delete payload.isEmpty;
+        const { data } = await api.createItem(payload);
+        console.log(data.list)
+        dispatch(setDiaryItems(data.list))
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const updateDiaryItems = (newList) => async (dispatch) => {
+    try {
+        console.log(newList)
+        const { data } = await api.updateList(newList)
+
+    } catch (error) {
+        console.log(error)
     }
 }
 

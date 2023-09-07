@@ -10,6 +10,7 @@ import { Carbs, Fat, Protein } from '../../components/dashboard/macros';
 
 import styles from './itemdata.module.css'
 import Modal from '../../components/modal/modal';
+import { FoodModalItemData } from '../addFoodModal/addFoodModal';
 
 
 
@@ -18,6 +19,7 @@ import Modal from '../../components/modal/modal';
 const ItemData = () => {
 
     const visibility = useSelector(state => state.visibilitySettings.showItemData);
+    const modalVisibility = useSelector(state => state.visibilitySettings.showFoodModal);
 
     const currentItem = useSelector(state => state.currentItem)
 
@@ -28,12 +30,12 @@ const ItemData = () => {
     }
 
     const RenderData = () => {
-        
+
         return (
             <>
-                {visibility === '' ?
+                {visibility === '' && modalVisibility === 'hidden' && currentItem.isEmpty === false ?
                     <div className={styles.mobile_container}>
-                        <Modal component={<ItemDataCore />} toggleVisibility={toggleVisibility} />
+                        <Modal component={<FoodModalItemData />} toggleVisibility={toggleVisibility} />
                     </div>
                     : null}
 
