@@ -33,11 +33,11 @@ export const getAll = async (req, res) => {
 
 export const addOne = async (req, res) => {
     const data = req.body;
-    
+
     try {
         const newCalObj = new CalObj(data);
         await newCalObj.save();
-        
+
         if (await DataArray.exists({ date: newCalObj.date })) {
             const list = await DataArray.findOne({ date: newCalObj.date });
             list.data.push(newCalObj._id);
@@ -48,7 +48,7 @@ export const addOne = async (req, res) => {
             await list.save();
         }
         const list = await DataArray.findOne({ date: newCalObj.date }).populate('data').exec()
-        res.status(201).json({addedItem: newCalObj, list: list.data});
+        res.status(201).json({ addedItem: newCalObj, list: list.data });
     } catch (error) {
         console.log(error)
         res.status(409).json({ message: error.message });
@@ -58,16 +58,15 @@ export const addOne = async (req, res) => {
 
 export const updateOne = async (req, res) => {
 
-    const { id, data } = req.body;
-    const update = JSON.parse(data);
-    const filter = { _id: id };
-
     try {
-        const obj = await CalObj.findOneAndUpdate(filter, update, { new: true }).exec();
-
-        res.status(200).json(obj);
+        const { id, ...data } = req.body;
+        const filter = { _id: id };
+        const obj = await CalObj.findOneAndUpdate(filter, data, { new: true }).exec();
+        const list = await DataArray.findOne({ date: data.date }).populate('data').exec()
+        res.status(200).json(list.data);
     } catch (error) {
-        res.status(404).json({ message: error.message });
+        console.log(error)
+        res.status(400).json({ message: error.message });
     }
 }
 
@@ -77,10 +76,9 @@ export const updateAll = async (req, res) => {
     // console.log("////////////////////////////")
     try {
         const data = req.body;
-        console.log(data)
         const date = data[0].date;
         const update = data.map(object => mongoose.Types.ObjectId(object._id));
-        const list = await DataArray.findOne({date: date}).exec();
+        const list = await DataArray.findOne({ date: date }).exec();
         list.data = update;
         await list.save();
         res.status(200).json(list.data);
@@ -686,7 +684,7 @@ export const apiTest = async (req, res) => {
             }
         ]
     }
-    
+
     res.status(200).json(data)
 }
 

@@ -26,7 +26,7 @@ export const Carbs = ({ consumed = 0, goal = 1, outerLabel = true }) => {
                     { value: fillValue, color: 'var(--clr-carbs)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={`${consumed}g`} secondLn={`${goal}g`} />
+                    <InnerLabel firstLn={`${consumed.toFixed(1)}g`} secondLn={`${goal}g`} />
                 }
             />
             {outerLabel ? <OuterLabel value={'Net Carbs'} /> : null}
@@ -49,7 +49,7 @@ export const Protein = ({ consumed = 0, goal = 1, outerLabel = true }) => {
                     { value: fillValue, color: 'var(--clr-protein)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={`${consumed}g`} secondLn={`${goal}g`} />}
+                    <InnerLabel firstLn={`${consumed.toFixed(1)}g`} secondLn={`${goal}g`} />}
             />
             {outerLabel ? <OuterLabel value={'Protein'} /> : null}
 
@@ -72,7 +72,7 @@ export const Fat = ({ consumed = 0, goal = 1, outerLabel = true }) => {
                     { value: fillValue, color: 'var(--clr-fat)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={`${consumed}g`} secondLn={`${goal}g`} />
+                    <InnerLabel firstLn={`${consumed.toFixed(1)}g`} secondLn={`${goal}g`} />
                 }
             />
             {outerLabel ? <OuterLabel value={'Fat'} /> : null}
