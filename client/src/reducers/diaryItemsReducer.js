@@ -25,10 +25,22 @@ export const addItem = (newItem) => async (dispatch) => {
         const payload = { ...newItem }
         delete payload.isEmpty;
         const { data } = await api.createItem(payload);
-        console.log(data.list)
+        // console.log(data.list)
         dispatch(setDiaryItems(data.list))
     } catch (error) {
         console.log(error)
+    }
+}
+
+export const updateItem = (updatedItem) => async (dispatch) => {
+    try {
+        const payload = { ...updatedItem }
+        delete payload.isEmpty;
+        const { data } = await api.updateItem(payload);
+        console.log(data)
+        dispatch(setDiaryItems(data))
+    } catch (error) {
+
     }
 }
 

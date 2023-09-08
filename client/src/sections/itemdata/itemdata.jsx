@@ -3,14 +3,8 @@ import { hideItemData } from '../../reducers/visibilityReducer';
 
 import ItemDataCore from '../../components/itemData/itemDataCore';
 
-import { Carousel } from '@mantine/carousel';
-
-import { ConsumedCalories } from '../../components/dashboard/calories';
-import { Carbs, Fat, Protein } from '../../components/dashboard/macros';
-
 import styles from './itemdata.module.css'
 import Modal from '../../components/modal/modal';
-import { FoodModalItemData } from '../addFoodModal/addFoodModal';
 
 
 
@@ -35,7 +29,7 @@ const ItemData = () => {
             <>
                 {visibility === '' && modalVisibility === 'hidden' && currentItem.isEmpty === false ?
                     <div className={styles.mobile_container}>
-                        <Modal component={<FoodModalItemData />} toggleVisibility={toggleVisibility} />
+                        <Modal component={<ItemDataCore />} toggleVisibility={toggleVisibility} />
                     </div>
                     : null}
 

@@ -2,9 +2,6 @@ import { useDispatch, useSelector } from "react-redux"
 import Modal from "../../components/modal/modal"
 import { hideFoodModal, showItemData, hideItemData } from "../../reducers/visibilityReducer"
 
-import nutritionixLogo from '../../assets/nixlogo.png'
-
-
 import styles from './addFoodModal.module.css'
 import rowStyles from '../../sections/diary/diary.module.css'
 import itemDataStyles from '../../sections/itemdata/itemdata.module.css'
@@ -170,7 +167,6 @@ export const FoodModalItemData = () => {
     // For some reason, I don't need to parseFloat the 'value'
     const inputChange = (e) => {
         const value = e.target.value;
-        console.log(typeof value)
 
         const re = /^(\d)*(\.)?([0-9]{1,5})?$/;
         // const re2 = /^[0-9\b]+$/; - just for reference

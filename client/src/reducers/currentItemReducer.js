@@ -19,6 +19,7 @@ const currentItemSlice = createSlice({
 
             return state = {
                 isEmpty: false,
+                id: item._id || null,
                 type: item.type,
                 name: item.name,
                 date: item.date,

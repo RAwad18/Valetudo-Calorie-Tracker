@@ -60,7 +60,6 @@ const DiaryContent = () => {
 
     const onClickHandler = (event) => {
         const index = event.currentTarget.id;
-        console.log(diaryItems[index])
         dispatch(setCurrentItem(diaryItems[index]))
         dispatch(showItemData());
     }
