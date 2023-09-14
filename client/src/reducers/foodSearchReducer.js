@@ -28,6 +28,7 @@ const filterDuplicates = (arrayOfDuplicates) => {
 export const fetchResults = (query) => async (dispatch) => {
     try {
         const { data } = await nix.searchFood(query);
+
         const tagIDCount = data.common
             .reduce((accumulated, current) => {
                 accumulated[current.tag_id] = (accumulated[current.tag_id] || 0) + 1;

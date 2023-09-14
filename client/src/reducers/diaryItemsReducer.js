@@ -37,7 +37,7 @@ export const updateItem = (updatedItem) => async (dispatch) => {
         const payload = { ...updatedItem }
         delete payload.isEmpty;
         const { data } = await api.updateItem(payload);
-        console.log(data)
+        // console.log(data)
         dispatch(setDiaryItems(data))
     } catch (error) {
 
@@ -46,9 +46,19 @@ export const updateItem = (updatedItem) => async (dispatch) => {
 
 export const updateDiaryItems = (newList) => async (dispatch) => {
     try {
-        console.log(newList)
+        // console.log(newList)
         const { data } = await api.updateList(newList)
 
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const deleteItem = (itemId) => async (dispatch) => {
+    try {
+        console.log(itemId)
+        const { data } = await api.deleteItem(itemId);
+        console.log(data);
     } catch (error) {
         console.log(error)
     }

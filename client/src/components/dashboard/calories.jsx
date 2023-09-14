@@ -18,13 +18,13 @@ export const percentCalculator = (value, total) => {
     return ((value / total) * 100).toFixed(2)
 }
 
-export const ConsumedCalories = ({ consumed = 0, carbs = 0, protein = 0, fat = 0, alcohol = 0, outerLabel = true }) => {
+export const ConsumedCalories = ({ nutritionData, outerLabel = true }) => {
 
-    const total = carbs + protein + fat + alcohol;
-    const carbsFillValue = percentCalculator(carbs, total)
-    const proteinFillValue = percentCalculator(protein, total)
-    const fatFillValue = percentCalculator(fat, total)
-    const alcoholFillValue = percentCalculator(alcohol, total)
+    const total = nutritionData.netCarbs + nutritionData.protein + nutritionData.fat;
+    const carbsFillValue = percentCalculator(nutritionData.netCarbs || 0, total)
+    const proteinFillValue = percentCalculator(nutritionData.protein || 0, total)
+    const fatFillValue = percentCalculator(nutritionData.fat || 0, total)
+    // const alcoholFillValue = percentCalculator(alcohol || 0, total)
 
     return (
         <div className={styles.ring}>
@@ -38,7 +38,7 @@ export const ConsumedCalories = ({ consumed = 0, carbs = 0, protein = 0, fat = 0
                     { value: proteinFillValue, color: 'var(--clr-protein)' },
                 ]}
                 label={
-                    <InnerLabel firstLn={Math.round(consumed)} secondLn={'kcal'} />
+                    <InnerLabel firstLn={Math.round(nutritionData.consumedCalories)} secondLn={'kcal'} />
                 }
             />
             {outerLabel ? <OuterLabel value={'Consumed'} /> : null}
@@ -69,9 +69,11 @@ export const TotalCalories = ({ outerLabel = true }) => {
     )
 }
 
-export const RemainingCalories = ({ consumed = 85, total = 100, outerLabel = true }) => {
+export const RemainingCalories = ({ calories = 0, calorieTarget = 1, outerLabel = true }) => {
     
-    const fillValue = percentCalculator(consumed, total)
+    const remaining = Math.round(calorieTarget - calories) || calorieTarget;
+
+    const fillValue = percentCalculator(calories, calorieTarget)
     return (
         <div className={styles.ring}>
             <RingProgress

@@ -13,7 +13,8 @@
     font-weight: bold;
 }
 
-.header__menu {
+.header__sun,
+.header__account{
     display: block;
     color: var(--clr-light);
     width: var(--size-2xl);

@@ -5,8 +5,8 @@
     font-size: var(--size-sm);
 
     /* Remove/Adjust after adding multiple buttons */
-    justify-content: start;
-    padding-left: var(--space-base);
+    justify-content: center;
+    gap: 25%;
 }
 
 .button_bar__container button {

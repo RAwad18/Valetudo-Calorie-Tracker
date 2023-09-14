@@ -4,19 +4,19 @@ import '../../styles/Calendar.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDate as setDateFn } from '../../reducers/dateReducer';
 import { formatDate } from '../../reducers/dateReducer';
+import { toggleCalenderVisibility } from '../../reducers/visibilityReducer';
 
 
 const CalendarComponent = () => {
 
     const date = useSelector(state => state.date.date)
-    console.log(date)
 
     const dispatch = useDispatch();
 
     const setDate = (dateObject) => {
         const newDate = formatDate(dateObject)
         dispatch(setDateFn(newDate))
-        console.log(date)
+        dispatch(toggleCalenderVisibility())
     }
 
     return (

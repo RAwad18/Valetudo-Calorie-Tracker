@@ -6,11 +6,12 @@ import { ItemDataCalories } from './itemDataRing';
 import styles from '../../sections/itemdata/itemdata.module.css'
 import styles2 from '../../sections/addFoodModal/addFoodModal.module.css'
 import itemDataStyles from '../../sections/itemdata/itemdata.module.css'
-import { updateItem } from '../../reducers/diaryItemsReducer';
+import { deleteItem, fetchData, updateItem } from '../../reducers/diaryItemsReducer';
 
 
 const ItemDataDisplay = () => {
     const currentItem = useSelector(state => state.currentItem)
+    const date = useSelector(state => state.date.date)
 
     const [placeHolder, setPlaceHolder] = useState('')
     const [currentQuantity, setCurrentQuanity] = useState( currentItem.serving_qty || '');
@@ -99,6 +100,12 @@ const ItemDataDisplay = () => {
         dispatch(hideItemData())
     }
 
+    const deleteItemHandler = () => {
+        dispatch(deleteItem(currentItem.id))
+        dispatch(fetchData(date))
+        dispatch(hideItemData())
+    }
+
     return (
         <>
             {currentItem.isEmpty === false &&
@@ -153,7 +160,9 @@ const ItemDataDisplay = () => {
                     </div>
 
                     <div className={styles2.button_tab}>
-                        <button className={styles2.add_btn} onClick={updateItemHandler}>Update Diary</button>
+                        <button className={styles2.btn} onClick={updateItemHandler}>Update Diary</button>
+
+                        <button className={styles2.btn} onClick={deleteItemHandler}>Delete Entry</button>
                     </div>
 
                 </>}

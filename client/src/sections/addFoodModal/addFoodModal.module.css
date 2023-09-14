@@ -120,16 +120,17 @@ span {
     flex-direction: row;
     justify-content: center;
     margin-top: calc(-1 * var(--space-xs));
+    gap: var(--space-xs);
 }
 
-.add_btn{
+.btn{
     font-size: var(--text-lg);
     background-color: var(--clr-secondary);
     padding: var(--space-xxs) var(--space-base);
     border-radius: 1rem;
 }
 
-.add_btn:hover {
+.btn:hover {
     background-color: var(--clr-text);
     color: var(--clr-primary);
 }
@@ -137,6 +138,11 @@ span {
 /* NIX LOGO */
 .nix_logo {
     font-size: var(--text-sm);
+}
+
+.no_results {
+    padding-top: var(--space-xxs);
+    padding-left: var(--space-sm);
 }
 
 

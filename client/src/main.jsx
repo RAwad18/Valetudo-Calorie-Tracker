@@ -7,6 +7,7 @@ import visibilityReducer from './reducers/visibilityReducer.js'
 import dateReducer from './reducers/dateReducer.js'
 import currentItemReducer from './reducers/currentItemReducer.js'
 import diaryItemsReducer from './reducers/diaryItemsReducer.js'
+import targetsReducer from './reducers/targetsReducer.js'
 import nutritionReducer from './reducers/nutritionReducer.js'
 import foodSearchReducer from './reducers/foodSearchReducer.js'
 
@@ -20,6 +21,7 @@ const store = configureStore(
       date: dateReducer,
       currentItem: currentItemReducer,
       diaryItems: diaryItemsReducer,
+      targets: targetsReducer,
       nutrition:  nutritionReducer,
       foodSearch: foodSearchReducer,
       // exerciseSearch: exerciseSearchReducer

@@ -42,7 +42,7 @@ const Component = ({ toggleVisibility }) => {
 
     const onPressEnter = (e) => {
         const key = e.key;
-        if (e.key === 'Enter')
+        if (key === 'Enter')
             handleSubmit(e)
     }
 
@@ -76,7 +76,7 @@ const Component = ({ toggleVisibility }) => {
                         )
 
                         :
-                        <div>No Results</div>
+                        <div className={styles.no_results}>No Results</div>
                     }
                 </div>
 
@@ -248,7 +248,7 @@ export const FoodModalItemData = () => {
                     </div>
 
                     <div className={styles.button_tab}>
-                        <button className={styles.add_btn} onClick={addItemHandler}>Add to Diary</button>
+                        <button className={styles.btn} onClick={addItemHandler}>Add to Diary</button>
                     </div>
 
                 </>}

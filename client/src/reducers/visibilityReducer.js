@@ -5,7 +5,8 @@ const visibilitySlice = createSlice({
     initialState: {
         showCalendar: 'hidden',
         showItemData: 'hidden',
-        showFoodModal: 'hidden'
+        showFoodModal: 'hidden',
+        showTargetsModal: 'hidden'
     },
     reducers: {
         toggleCalenderVisibility(state, action) {
@@ -28,12 +29,20 @@ const visibilitySlice = createSlice({
         hideFoodModal(state, action) {
             state.showFoodModal = 'hidden';
             return state
+        },
+        showTargetsModal(state, action) {
+            state.showTargetsModal = '';
+            return state
+        },
+        hideTargetsModal(state, action) {
+            state.showTargetsModal = 'hidden';
+            return state
         }
     }
 });
 
 
-export const { toggleCalenderVisibility, showItemData, hideItemData, showFoodModal, hideFoodModal } = visibilitySlice.actions;
+export const { toggleCalenderVisibility, showItemData, hideItemData, showFoodModal, hideFoodModal, showTargetsModal, hideTargetsModal } = visibilitySlice.actions;
 
 export default visibilitySlice.reducer;
 

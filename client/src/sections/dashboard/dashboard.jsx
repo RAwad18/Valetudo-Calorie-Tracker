@@ -1,10 +1,12 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { createStyles, Image, Card, Text, Group, Button, getStylesRef, rem } from '@mantine/core';
 import { Carousel } from '@mantine/carousel';
 import { ConsumedCalories, TotalCalories, RemainingCalories } from '../../components/dashboard/calories';
 import { Carbs, Protein, Fat } from '../../components/dashboard/macros';
 import styles from './dashboard.module.css'
+import { retrieveTargets } from '../../reducers/targetsReducer';
+import { useEffect } from 'react';
 
 
 const carouselStyles = createStyles(() => ({
@@ -47,7 +49,14 @@ const carouselStyles = createStyles(() => ({
 const Dashboard = () => {
 
     const nutritionData = useSelector(state => state.nutrition)
+    const targetData = useSelector(state => state.targets)
     // console.log(nutritionData)
+
+    const dispatch = useDispatch();
+
+    useEffect(()=>{
+        dispatch(retrieveTargets());
+    }, [])
 
     const { classes } = carouselStyles();
 
@@ -67,16 +76,15 @@ const Dashboard = () => {
                 >
                     <Carousel.Slide>
                         <div className={styles.ring__container}>
-                            <ConsumedCalories consumed={nutritionData.consumedCalories} carbs={nutritionData.netCarbs} protein={nutritionData.protein} fat={nutritionData.fat}/>
-                            <TotalCalories />
-                            <RemainingCalories/>
+                            <ConsumedCalories nutritionData={nutritionData}/>
+                            <RemainingCalories calories={nutritionData.consumedCalories} calorieTarget={targetData.calorieGoal}/>
                         </div>
                     </Carousel.Slide>
                     <Carousel.Slide>
                         <div className={styles.ring__container}>
-                            <Carbs consumed={nutritionData.netCarbs} goal={200}/>
-                            <Protein consumed={nutritionData.protein} goal={100}/>
-                            <Fat consumed={nutritionData.fat} goal={'N/A'}/>
+                            <Carbs consumed={nutritionData.netCarbs} goal={targetData.netCarbsGoal}/>
+                            <Protein consumed={nutritionData.protein} goal={targetData.proteinGoal}/>
+                            <Fat consumed={nutritionData.fat} goal={targetData.fatGoal}/>
                         </div>
                     </Carousel.Slide>
                 </Carousel>

@@ -11,6 +11,7 @@ import AddFoodModal from './sections/addFoodModal/addFoodModal';
 import './styles/modern-normalize.css'
 import './styles/App.css'
 import './styles/utils.css'
+import TargetsModal from './sections/targetsModal/targetsModal';
 
 function App() {
 
@@ -71,6 +72,7 @@ function App() {
         <Diary />
         <ItemData visibility={visibilityOptions.showItemData} hideItemData={hideItemData} />
         <AddFoodModal />
+        <TargetsModal />
       </div>
 
       <div className="desktop_container">
@@ -86,6 +88,7 @@ function App() {
           </div>
         </div>
         <AddFoodModal />
+        <TargetsModal />
       </div>
     </>
   )

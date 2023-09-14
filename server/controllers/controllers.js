@@ -90,7 +90,7 @@ export const updateAll = async (req, res) => {
 export const deleteOne = async (req, res) => {
 
     const { id } = req.body;
-
+    console.log(req.body)
     try {
         const obj = await CalObj.findByIdAndDelete(id);
         res.status(202).send(obj);

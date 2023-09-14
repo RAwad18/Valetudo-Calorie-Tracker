@@ -123,13 +123,16 @@ span {
     }
 
     .itemdata__container {
+        gap: var(--space-sm);
         border: solid 1px var(--clr-border);
         border-radius: 1rem;
         padding: var(--space-xxs);
+        padding-bottom: var(--space-sm);
     }
 
     .carousel__calorieSlide,
     .carousel__macrosSlide {
-        margin-bottom: 0;
+        margin-top: var(--space-xs);
+        margin-bottom: var(--space-sm);
     }
 }
